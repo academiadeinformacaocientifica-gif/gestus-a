@@ -1,4 +1,4 @@
-import { LayoutDashboard, Wallet, ShoppingBag, LogOut, User } from "lucide-react";
+import { LayoutDashboard, Wallet, ShoppingBag, Package, LogOut, User } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useAuth } from "@/hooks/useAuth";
 import { useProfile } from "@/hooks/useProfile";
@@ -19,6 +19,7 @@ const mainNav = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Financeiro", url: "/financeiro", icon: Wallet },
   { title: "Vendas", url: "/vendas", icon: ShoppingBag },
+  { title: "Stock", url: "/stock", icon: Package },
 ];
 
 export function AppSidebar() {

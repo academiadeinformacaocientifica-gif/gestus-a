@@ -125,6 +125,37 @@ export interface VendaFilters {
   maxValor?: number;
 }
 
+// ============ STOCK ============
+
+export interface ProdutoStock {
+  id: string;
+  user_id: string;
+  nome_produto: string;
+  sku?: string;
+  quantidade: number;
+  preco_unitario: number;
+  descricao?: string;
+  created_at: string;
+  updated_at?: string;
+}
+
+export interface ProdutoStockFormData {
+  nome_produto: string;
+  sku?: string;
+  quantidade: number;
+  preco_unitario: number;
+  descricao?: string;
+}
+
+export interface StockFilters {
+  nome?: string;
+  sku?: string;
+  quantidade?: {
+    min?: number;
+    max?: number;
+  };
+}
+
 // ============ DASHBOARD ============
 
 export interface DashboardMetrics {

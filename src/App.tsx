@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import FinanceiroPage from "./pages/FinanceiroPage";
 import VendasPage from "./pages/VendasPage";
+import StockPage from "./pages/StockPage";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/financeiro" element={<FinanceiroPage />} />
               <Route path="/vendas" element={<VendasPage />} />
+              <Route path="/stock" element={<StockPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

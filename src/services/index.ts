@@ -4,3 +4,4 @@
  */
 
 export * from "./transactions";
+export * from "./stock";
