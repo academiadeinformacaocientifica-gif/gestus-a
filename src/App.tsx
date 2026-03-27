@@ -11,6 +11,10 @@ import Auth from "./pages/Auth";
 import Financeiro from "./pages/Financeiro";
 import Vendas from "./pages/Vendas";
 import Stock from "./pages/Stock";
+import NovaDespesa from "./pages/NovaDespesa";
+import NovaVenda from "./pages/NovaVenda";
+import Relatorios from "./pages/Relatorios";
+import Configuracoes from "./pages/Configuracoes";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -27,6 +31,10 @@ const App = () => (
               <Route path="/financeiro" element={<Financeiro />} />
               <Route path="/vendas" element={<Vendas />} />
               <Route path="/stock" element={<Stock />} />
+              <Route path="/despesas/nova" element={<NovaDespesa />} />
+              <Route path="/vendas/nova" element={<NovaVenda />} />
+              <Route path="/relatorios" element={<Relatorios />} />
+              <Route path="/configuracoes" element={<Configuracoes />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
