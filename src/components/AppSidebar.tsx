@@ -41,7 +41,7 @@ export function AppSidebar() {
       <SidebarContent className="pt-5">
         {/* Logo */}
         <div className={`px-5 mb-6 ${collapsed ? "px-2 text-center" : ""}`}>
-          <span className="text-xl font-bold tracking-tighter text-foreground">
+          <span className="text-xl font-bold tracking-tighter text-sidebar-foreground">
             {collapsed ? "G" : "gestus"}
           </span>
         </div>
@@ -107,7 +107,7 @@ export function AppSidebar() {
               <User className="h-4 w-4 text-destaque" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-medium text-foreground truncate">{profile.nome || "Utilizador"}</p>
+              <p className="text-sm font-medium text-sidebar-foreground truncate">{profile.nome || "Utilizador"}</p>
               <p className="text-xs text-sidebar-muted truncate">{profile.nome_negocio}</p>
             </div>
           </div>
