@@ -1,4 +1,4 @@
-import { LayoutDashboard, Wallet, ShoppingBag, Package, LogOut, User } from "lucide-react";
+import { LayoutDashboard, Wallet, ShoppingBag, Package, LogOut, User, PlusCircle, TrendingUp, Settings, Receipt } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useAuth } from "@/hooks/useAuth";
 import { useProfile } from "@/hooks/useProfile";
@@ -12,6 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarFooter,
+  SidebarSeparator,
   useSidebar,
 } from "@/components/ui/sidebar";
 
@@ -20,6 +21,13 @@ const mainNav = [
   { title: "Financeiro", url: "/financeiro", icon: Wallet },
   { title: "Vendas", url: "/vendas", icon: ShoppingBag },
   { title: "Stock", url: "/stock", icon: Package },
+];
+
+const quickActions = [
+  { title: "Nova Despesa", url: "/despesas/nova", icon: Receipt },
+  { title: "Nova Venda", url: "/vendas/nova", icon: PlusCircle },
+  { title: "Relatórios", url: "/relatorios", icon: TrendingUp },
+  { title: "Configurações", url: "/configuracoes", icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -52,6 +60,32 @@ export function AppSidebar() {
                       to={item.url}
                       end={item.url === "/"}
                       className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-150"
+                      activeClassName="bg-sidebar-accent text-sidebar-accent-foreground font-semibold"
+                    >
+                      <item.icon className="h-[18px] w-[18px] shrink-0" />
+                      {!collapsed && <span className="text-sm">{item.title}</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Quick Actions */}
+        <SidebarSeparator className="my-3 bg-sidebar-border/50" />
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-[11px] uppercase tracking-wider text-sidebar-muted font-semibold px-5">
+            {!collapsed && "Ações Rápidas"}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="px-2 space-y-0.5">
+              {quickActions.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <NavLink
+                      to={item.url}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-150"
                       activeClassName="bg-sidebar-accent text-sidebar-accent-foreground font-semibold"
                     >
                       <item.icon className="h-[18px] w-[18px] shrink-0" />
