@@ -12,12 +12,10 @@ export function AppLayout({ children }: { children: ReactNode }) {
       <div className="min-h-screen flex w-full bg-background">
         <AppSidebar />
         <div className="flex-1 flex flex-col min-w-0">
-          {/* Top header bar */}
-          <header className="h-16 flex items-center justify-between px-6 bg-card border-b border-border">
+          <header className="h-14 flex items-center justify-between px-4 md:px-6 bg-card border-b border-border/60">
             <div className="flex items-center gap-3">
-              <SidebarTrigger className="text-muted-foreground" />
-              {/* Search bar */}
-              <div className="hidden md:flex items-center gap-2 bg-background rounded-xl px-4 py-2 w-72">
+              <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
+              <div className="hidden md:flex items-center gap-2 bg-secondary/50 rounded-lg px-3 py-1.5 w-64">
                 <Search className="h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
@@ -27,18 +25,18 @@ export function AppLayout({ children }: { children: ReactNode }) {
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <button className="relative p-2 rounded-xl hover:bg-background transition-colors">
-                <Bell className="h-5 w-5 text-muted-foreground" />
+            <div className="flex items-center gap-2">
+              <button className="relative p-2 rounded-lg hover:bg-secondary transition-colors">
+                <Bell className="h-4 w-4 text-muted-foreground" />
               </button>
-              <div className="h-9 w-9 rounded-full bg-destaque flex items-center justify-center text-destaque-foreground text-sm font-semibold">
+              <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-xs font-medium">
                 {profile?.nome?.charAt(0)?.toUpperCase() || "U"}
               </div>
             </div>
           </header>
 
-          <main className="flex-1 p-5 md:p-8 overflow-y-auto">
-            <div className="max-w-[1200px] w-full mx-auto">
+          <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto">
+            <div className="max-w-[1400px] w-full mx-auto">
               {children}
             </div>
           </main>

@@ -6,101 +6,101 @@
 
 @layer base {
   :root {
-    --background: 220 14% 96%;
-    --foreground: 224 71% 4%;
+    --background: 220 10% 98%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 239 84% 67%;
+    --primary: 220 15% 25%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 224 71% 4%;
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 20% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 8% 45%;
 
-    --accent: 220 14% 96%;
-    --accent-foreground: 224 71% 4%;
+    --accent: 220 10% 96%;
+    --accent-foreground: 220 20% 15%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 239 84% 67%;
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 220 15% 25%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Gestus semantic tokens */
-    --ganho: 160 84% 39%;
+    /* Gestus semantic tokens - refined professional palette */
+    --ganho: 155 45% 35%;
     --ganho-foreground: 0 0% 100%;
-    --ganho-bg: 158 64% 95%;
+    --ganho-bg: 155 35% 96%;
 
-    --despesa: 347 77% 50%;
+    --despesa: 350 60% 50%;
     --despesa-foreground: 0 0% 100%;
-    --despesa-bg: 347 80% 96%;
+    --despesa-bg: 350 50% 97%;
 
-    --destaque: 239 84% 67%;
+    --destaque: 220 15% 25%;
     --destaque-foreground: 0 0% 100%;
-    --destaque-bg: 239 80% 96%;
+    --destaque-bg: 220 10% 96%;
 
-    --info: 199 89% 48%;
+    --info: 210 20% 40%;
     --info-foreground: 0 0% 100%;
-    --info-bg: 199 80% 95%;
+    --info-bg: 210 15% 97%;
 
-    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
-    --shadow-card-hover: 0 10px 25px -5px rgb(0 0 0 / 0.06), 0 4px 10px -6px rgb(0 0 0 / 0.04);
+    --shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.04), 0 0 0 1px rgb(0 0 0 / 0.03);
+    --shadow-card-hover: 0 4px 12px -2px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
 
-    /* Light sidebar */
+    /* Professional sidebar - clean and minimal */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 9% 46%;
-    --sidebar-primary: 239 84% 67%;
+    --sidebar-foreground: 220 10% 35%;
+    --sidebar-primary: 220 15% 25%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 239 84% 97%;
-    --sidebar-accent-foreground: 239 84% 67%;
-    --sidebar-border: 220 13% 93%;
-    --sidebar-ring: 239 84% 67%;
-    --sidebar-muted: 220 9% 60%;
+    --sidebar-accent: 220 10% 96%;
+    --sidebar-accent-foreground: 220 15% 25%;
+    --sidebar-border: 220 10% 90%;
+    --sidebar-ring: 220 15% 25%;
+    --sidebar-muted: 220 8% 55%;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 0 0% 98%;
-    --card: 224 50% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 224 50% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 239 84% 67%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 224 50% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 224 50% 12%;
-    --muted-foreground: 220 9% 60%;
-    --accent: 224 50% 12%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 224 50% 15%;
-    --input: 224 50% 15%;
-    --ring: 239 84% 67%;
-    --ganho-bg: 160 40% 12%;
-    --despesa-bg: 347 40% 12%;
-    --destaque-bg: 239 40% 12%;
-    --info-bg: 199 40% 12%;
-    --sidebar-background: 224 50% 6%;
-    --sidebar-foreground: 220 9% 60%;
-    --sidebar-primary: 239 84% 67%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 224 50% 10%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 224 50% 12%;
-    --sidebar-ring: 239 84% 67%;
-    --sidebar-muted: 220 9% 46%;
+    --background: 220 15% 5%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 85%;
+    --primary-foreground: 220 20% 10%;
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 5% 55%;
+    --accent: 220 15% 12%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 0 0% 70%;
+    --ganho-bg: 155 40% 15%;
+    --despesa-bg: 350 40% 15%;
+    --destaque-bg: 220 15% 12%;
+    --info-bg: 210 20% 12%;
+    --sidebar-background: 220 15% 5%;
+    --sidebar-foreground: 220 5% 60%;
+    --sidebar-primary: 0 0% 85%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 220 15% 10%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 15% 12%;
+    --sidebar-ring: 0 0% 70%;
+    --sidebar-muted: 220 5% 50%;
   }
 }
 

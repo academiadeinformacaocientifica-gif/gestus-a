@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import { Navigate } from "react-router-dom";
+import { AppLayout } from "@/components/AppLayout";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,7 +17,7 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.2, 0.8, 0.2, 1] as const } },
 };
 
-export default function Stock() {
+function Stock() {
   const { user } = useAuth();
   const queryClient = useQueryClient();
   const [open, setOpen] = useState(false);
@@ -133,34 +135,34 @@ export default function Stock() {
     >
       <motion.div variants={fadeUp} className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Stock</h1>
-          <p className="text-muted-foreground mt-0.5">Gestão do seu inventário de produtos.</p>
+          <h1 className="text-xl font-semibold tracking-tight text-foreground">Stock</h1>
+          <p className="text-sm text-muted-foreground mt-0.5">Inventário de produtos</p>
         </div>
         <Button
           onClick={() => {
             resetForm();
             setOpen(true);
           }}
-          className="gap-2 rounded-xl h-10"
+          className="gap-2 rounded-lg h-9"
         >
-          <Plus className="h-4 w-4" /> Adicionar Produto
+          <Plus className="h-4 w-4" /> Adicionar
         </Button>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-destaque-bg rounded-2xl border border-destaque/10 p-5">
-          <p className="text-xs font-medium text-muted-foreground">Valor Total Stock</p>
-          <p className="text-2xl font-bold tabular-nums text-foreground mt-1">
+      <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="bg-card rounded-xl border border-border p-4">
+          <p className="text-xs font-medium text-muted-foreground">Valor Total</p>
+          <p className="text-xl font-semibold tabular-nums text-foreground mt-1">
             {totalValorStock.toFixed(2)}€
           </p>
-          <p className="text-xs text-destaque font-medium mt-1">{produtos.length} produtos</p>
+          <p className="text-xs text-muted-foreground mt-1">{produtos.length} produtos</p>
         </div>
-        <div className="bg-ganho-bg rounded-2xl border border-ganho/10 p-5">
-          <p className="text-xs font-medium text-muted-foreground">Quantidade Total</p>
-          <p className="text-2xl font-bold tabular-nums text-foreground mt-1">
+        <div className="bg-card rounded-xl border border-border p-4">
+          <p className="text-xs font-medium text-muted-foreground">Quantidade</p>
+          <p className="text-xl font-semibold tabular-nums text-foreground mt-1">
             {totalQuantidade} unidades
           </p>
-          <p className="text-xs text-ganho font-medium mt-1">Inventário ativo</p>
+          <p className="text-xs text-muted-foreground mt-1">Em stock</p>
         </div>
       </motion.div>
 
@@ -338,3 +340,27 @@ export default function Stock() {
     </motion.div>
   );
 }
+
+function StockWithAuth() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-muted-foreground">A carregar...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/auth" replace />;
+  }
+
+  return (
+    <AppLayout>
+      <Stock />
+    </AppLayout>
+  );
+}
+
+export default StockWithAuth;

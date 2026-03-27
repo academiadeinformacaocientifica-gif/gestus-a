@@ -67,13 +67,12 @@ export default function Dashboard() {
 
   return (
     <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-6">
-      {/* Greeting */}
       <motion.div variants={fadeUp}>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">
-          Olá, {nome}! 👋
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          Bom dia, {nome}
         </h1>
-        <p className="text-muted-foreground mt-0.5">
-          {negocio ? `Acompanhe as métricas de ${negocio}.` : "Aqui está o resumo dos últimos 30 dias."}
+        <p className="text-sm text-muted-foreground mt-0.5">
+          {negocio ? `Resumo financeiro de ${negocio}` : "Resumo dos últimos 30 dias"}
         </p>
       </motion.div>
 

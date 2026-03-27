@@ -8,9 +8,9 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { queryClient } from "@/config/queryClient";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
-import FinanceiroPage from "./pages/FinanceiroPage";
-import VendasPage from "./pages/VendasPage";
-import StockPage from "./pages/StockPage";
+import Financeiro from "./pages/Financeiro";
+import Vendas from "./pages/Vendas";
+import Stock from "./pages/Stock";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -24,9 +24,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
-              <Route path="/financeiro" element={<FinanceiroPage />} />
-              <Route path="/vendas" element={<VendasPage />} />
-              <Route path="/stock" element={<StockPage />} />
+              <Route path="/financeiro" element={<Financeiro />} />
+              <Route path="/vendas" element={<Vendas />} />
+              <Route path="/stock" element={<Stock />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

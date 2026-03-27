@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import { Navigate } from "react-router-dom";
+import { AppLayout } from "@/components/AppLayout";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,7 +19,7 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.2, 0.8, 0.2, 1] as const } },
 };
 
-export default function Vendas() {
+function Vendas() {
   const { user } = useAuth();
   const queryClient = useQueryClient();
   const [open, setOpen] = useState(false);
@@ -71,18 +73,18 @@ export default function Vendas() {
     <motion.div initial="hidden" animate="show" variants={{ show: { transition: { staggerChildren: 0.06 } } }} className="space-y-6">
       <motion.div variants={fadeUp} className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Vendas</h1>
-          <p className="text-muted-foreground mt-0.5">Registe e acompanhe as suas vendas.</p>
+          <h1 className="text-xl font-semibold tracking-tight text-foreground">Vendas</h1>
+          <p className="text-sm text-muted-foreground mt-0.5">Registo de vendas</p>
         </div>
-        <Button onClick={() => setOpen(true)} className="gap-2 rounded-xl h-10">
-          <Plus className="h-4 w-4" /> Registar Venda
+        <Button onClick={() => setOpen(true)} className="gap-2 rounded-lg h-9">
+          <Plus className="h-4 w-4" /> Nova Venda
         </Button>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="bg-ganho-bg rounded-2xl border border-ganho/10 p-5 inline-block">
-        <p className="text-xs font-medium text-muted-foreground">Total de vendas</p>
-        <p className="text-2xl font-bold tabular-nums text-foreground mt-1">{totalVendas.toFixed(2)}€</p>
-        <p className="text-xs text-ganho font-medium mt-1">{vendas.length} vendas registadas</p>
+      <motion.div variants={fadeUp} className="bg-card rounded-xl border border-border p-4">
+        <p className="text-xs font-medium text-muted-foreground">Total</p>
+        <p className="text-xl font-semibold tabular-nums text-foreground mt-1">{totalVendas.toFixed(2)}€</p>
+        <p className="text-xs text-muted-foreground mt-1">{vendas.length} vendas</p>
       </motion.div>
 
       <motion.div variants={fadeUp} className="bg-card rounded-2xl border border-border shadow-card">
@@ -143,3 +145,27 @@ export default function Vendas() {
     </motion.div>
   );
 }
+
+function VendasWithAuth() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-muted-foreground">A carregar...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/auth" replace />;
+  }
+
+  return (
+    <AppLayout>
+      <Vendas />
+    </AppLayout>
+  );
+}
+
+export default VendasWithAuth;
