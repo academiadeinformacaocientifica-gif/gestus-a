@@ -8,15 +8,16 @@ import { ptAO } from "date-fns/locale";
 import { CURRENCY, DATE_FORMATS } from "@/lib/constants";
 
 /**
- * Formata um valor em euros com 2 casas decimais
+ * Formata um valor em Kwanzas com 2 casas decimais
  * @param valor - Valor numérico a formatar
- * @returns String formatada (ex: "1.234,56 €")
+ * @returns String formatada (ex: "1.234,56 Kz")
  */
 export const formatarMoeda = (valor: number): string => {
   return new Intl.NumberFormat(CURRENCY.LOCALE, {
-    style: "currency",
-    currency: CURRENCY.CODE,
-  }).format(valor);
+    style: "decimal",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(valor) + " " + CURRENCY.SYMBOL;
 };
 
 /**

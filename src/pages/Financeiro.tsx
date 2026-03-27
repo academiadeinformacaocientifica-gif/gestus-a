@@ -67,15 +67,15 @@ function Financeiro() {
       <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="bg-card rounded-xl border border-border p-4">
           <p className="text-xs font-medium text-muted-foreground">Ganhos</p>
-          <p className="text-lg font-semibold tabular-nums text-ganho mt-1">+{totalGanhos.toFixed(2)}€</p>
+          <p className="text-lg font-semibold tabular-nums text-ganho mt-1">+{totalGanhos.toFixed(2)}Kz</p>
         </div>
         <div className="bg-card rounded-xl border border-border p-4">
           <p className="text-xs font-medium text-muted-foreground">Despesas</p>
-          <p className="text-lg font-semibold tabular-nums text-despesa mt-1">-{totalDespesas.toFixed(2)}€</p>
+          <p className="text-lg font-semibold tabular-nums text-despesa mt-1">-{totalDespesas.toFixed(2)}Kz</p>
         </div>
         <div className="bg-card rounded-xl border border-border p-4">
           <p className="text-xs font-medium text-muted-foreground">Saldo</p>
-          <p className="text-lg font-semibold tabular-nums text-foreground mt-1">{lucro.toFixed(2)}€</p>
+          <p className="text-lg font-semibold tabular-nums text-foreground mt-1">{lucro.toFixed(2)}Kz</p>
         </div>
       </motion.div>
 

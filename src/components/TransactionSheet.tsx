@@ -105,7 +105,7 @@ export function TransactionSheet({ open, onOpenChange }: TransactionSheetProps) 
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="valor">Valor (€)</Label>
+            <Label htmlFor="valor">Valor (Kz)</Label>
             <Input
               id="valor"
               type="number"

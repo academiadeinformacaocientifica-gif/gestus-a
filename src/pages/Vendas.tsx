@@ -83,7 +83,7 @@ function Vendas() {
 
       <motion.div variants={fadeUp} className="bg-card rounded-xl border border-border p-4">
         <p className="text-xs font-medium text-muted-foreground">Total</p>
-        <p className="text-xl font-semibold tabular-nums text-foreground mt-1">{totalVendas.toFixed(2)}€</p>
+        <p className="text-xl font-semibold tabular-nums text-foreground mt-1">{totalVendas.toFixed(2)}Kz</p>
         <p className="text-xs text-muted-foreground mt-1">{vendas.length} vendas</p>
       </motion.div>
 
@@ -108,7 +108,7 @@ function Vendas() {
                   </p>
                 </div>
                 <span className="text-sm font-semibold tabular-nums text-ganho">
-                  +{Number(v.valor_total).toFixed(2)}€
+                  +{Number(v.valor_total).toFixed(2)}Kz
                 </span>
               </div>
             ))}
@@ -121,7 +121,7 @@ function Vendas() {
           <SheetHeader><SheetTitle>Nova venda</SheetTitle></SheetHeader>
           <form onSubmit={handleSubmit} className="space-y-5 mt-6">
             <div className="space-y-1.5">
-              <Label htmlFor="valorTotal" className="text-xs font-medium">Valor total (€)</Label>
+              <Label htmlFor="valorTotal" className="text-xs font-medium">Valor total (Kz)</Label>
               <Input id="valorTotal" type="number" step="0.01" min="0.01" value={valorTotal} onChange={(e) => setValorTotal(e.target.value)} placeholder="0.00" required className="text-2xl font-bold tabular-nums h-14 rounded-xl" />
             </div>
             <div className="space-y-1.5">

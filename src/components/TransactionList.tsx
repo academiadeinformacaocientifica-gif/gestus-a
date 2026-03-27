@@ -81,7 +81,7 @@ export function TransactionList({ transactions, compact = false }: TransactionLi
               compact ? "text-xs" : "text-sm",
               isGanho ? "text-ganho" : "text-despesa"
             )}>
-              {isGanho ? "+" : "-"}{Number(t.valor).toFixed(2)}€
+              {isGanho ? "+" : "-"}{Number(t.valor).toFixed(2)}Kz
             </span>
           </div>
         );

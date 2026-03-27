@@ -153,7 +153,7 @@ function Stock() {
         <div className="bg-card rounded-xl border border-border p-4">
           <p className="text-xs font-medium text-muted-foreground">Valor Total</p>
           <p className="text-xl font-semibold tabular-nums text-foreground mt-1">
-            {totalValorStock.toFixed(2)}€
+            {totalValorStock.toFixed(2)}Kz
           </p>
           <p className="text-xs text-muted-foreground mt-1">{produtos.length} produtos</p>
         </div>
@@ -224,11 +224,11 @@ function Stock() {
                       <p className="text-sm font-medium text-foreground">{p.quantidade}</p>
                     </td>
                     <td className="px-5 py-3 text-right">
-                      <p className="text-sm text-foreground">{p.preco_unitario.toFixed(2)}€</p>
+                      <p className="text-sm text-foreground">{p.preco_unitario.toFixed(2)}Kz</p>
                     </td>
                     <td className="px-5 py-3 text-right">
                       <p className="text-sm font-medium text-foreground">
-                        {(p.quantidade * p.preco_unitario).toFixed(2)}€
+                        {(p.quantidade * p.preco_unitario).toFixed(2)}Kz
                       </p>
                     </td>
                     <td className="px-5 py-3">
@@ -297,7 +297,7 @@ function Stock() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="preco">Preço Unitário (€) *</Label>
+              <Label htmlFor="preco">Preço Unitário (Kz) *</Label>
               <Input
                 id="preco"
                 type="number"

@@ -182,7 +182,7 @@ function Relatorios() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold tabular-nums text-ganho">+{totalGanhos.toFixed(2)}€</p>
+            <p className="text-2xl font-bold tabular-nums text-ganho">+{totalGanhos.toFixed(2)}Kz</p>
           </CardContent>
         </Card>
 
@@ -194,7 +194,7 @@ function Relatorios() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold tabular-nums text-despesa">-{totalDespesas.toFixed(2)}€</p>
+            <p className="text-2xl font-bold tabular-nums text-despesa">-{totalDespesas.toFixed(2)}Kz</p>
           </CardContent>
         </Card>
 
@@ -207,7 +207,7 @@ function Relatorios() {
           </CardHeader>
           <CardContent>
             <p className={`text-2xl font-bold tabular-nums ${lucro >= 0 ? "text-ganho" : "text-despesa"}`}>
-              {lucro >= 0 ? "+" : ""}{lucro.toFixed(2)}€
+              {lucro >= 0 ? "+" : ""}{lucro.toFixed(2)}Kz
             </p>
           </CardContent>
         </Card>
@@ -250,7 +250,7 @@ function Relatorios() {
                       .map(([cat, valor]) => (
                         <div key={cat} className="flex items-center justify-between">
                           <span className="text-sm text-foreground">{cat}</span>
-                          <span className="text-sm font-medium text-ganho">+{valor.toFixed(2)}€</span>
+                          <span className="text-sm font-medium text-ganho">+{valor.toFixed(2)}Kz</span>
                         </div>
                       ))
                   )}
@@ -268,7 +268,7 @@ function Relatorios() {
                     topCategorias.map(([cat, valor]) => (
                       <div key={cat} className="flex items-center justify-between">
                         <span className="text-sm text-foreground">{cat}</span>
-                        <span className="text-sm font-medium text-despesa">-{valor.toFixed(2)}€</span>
+                        <span className="text-sm font-medium text-despesa">-{valor.toFixed(2)}Kz</span>
                       </div>
                     ))
                   )}
@@ -289,7 +289,7 @@ function Relatorios() {
                       <div className="flex justify-between text-xs">
                         <span className="text-muted-foreground capitalize">{mes.mes}</span>
                         <span className="text-muted-foreground">
-                          +{mes.ganhos.toFixed(0)}€ / -{mes.despesas.toFixed(0)}€
+                          +{mes.ganhos.toFixed(0)}Kz / -{mes.despesas.toFixed(0)}Kz
                         </span>
                       </div>
                       <div className="flex h-3 rounded-full overflow-hidden bg-muted">
@@ -331,16 +331,16 @@ function Relatorios() {
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
                   <span className="text-sm text-muted-foreground">Ganhos</span>
-                  <span className="text-sm font-medium text-ganho">+{totalGanhos.toFixed(2)}€</span>
+                  <span className="text-sm font-medium text-ganho">+{totalGanhos.toFixed(2)}Kz</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
                   <span className="text-sm text-muted-foreground">Despesas</span>
-                  <span className="text-sm font-medium text-despesa">-{totalDespesas.toFixed(2)}€</span>
+                  <span className="text-sm font-medium text-despesa">-{totalDespesas.toFixed(2)}Kz</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
                   <span className="text-sm text-muted-foreground">Lucro Líquido</span>
                   <span className={`text-sm font-medium ${lucro >= 0 ? "text-ganho" : "text-despesa"}`}>
-                    {lucro >= 0 ? "+" : ""}{lucro.toFixed(2)}€
+                    {lucro >= 0 ? "+" : ""}{lucro.toFixed(2)}Kz
                   </span>
                 </div>
                 <div className="flex justify-between py-2">

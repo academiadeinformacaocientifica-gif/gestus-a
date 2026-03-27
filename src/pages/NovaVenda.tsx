@@ -119,7 +119,7 @@ function NovaVenda() {
             <div className="space-y-2">
               <Label htmlFor="valorTotal" className="text-xs font-medium flex items-center gap-2">
                 <Calculator className="h-3 w-3" />
-                Valor Total (€)
+                Valor Total (Kz)
               </Label>
               <Input
                 id="valorTotal"

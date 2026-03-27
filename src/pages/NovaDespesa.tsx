@@ -128,7 +128,7 @@ function NovaDespesa() {
             <div className="space-y-2">
               <Label htmlFor="valor" className="text-xs font-medium flex items-center gap-2">
                 <Calculator className="h-3 w-3" />
-                Valor (€)
+                Valor (Kz)
               </Label>
               <Input
                 id="valor"

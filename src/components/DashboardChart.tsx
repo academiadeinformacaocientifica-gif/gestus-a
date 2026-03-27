@@ -54,7 +54,7 @@ export function DashboardChart({ transactions }: { transactions: Transaction[] }
               fontSize: "12px",
               boxShadow: "var(--shadow-card-hover)",
             }}
-            formatter={(value: number) => `${value.toFixed(2)}€`}
+            formatter={(value: number) => `${value.toFixed(2)}Kz`}
             cursor={{ fill: "hsl(var(--muted) / 0.3)" }}
           />
           <Legend

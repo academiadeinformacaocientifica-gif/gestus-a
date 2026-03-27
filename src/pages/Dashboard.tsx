@@ -101,28 +101,28 @@ export default function Dashboard() {
       <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <MetricCard
           label="Faturamento total"
-          value={`${faturamento.toFixed(2)}€`}
+          value={`${faturamento.toFixed(2)}Kz`}
           subtitle="últimos 30 dias"
           icon={<TrendingUp className="h-5 w-5" />}
           variant="ganho"
         />
         <MetricCard
           label="Despesas totais"
-          value={`${despesas.toFixed(2)}€`}
+          value={`${despesas.toFixed(2)}Kz`}
           subtitle="últimos 30 dias"
           icon={<TrendingDown className="h-5 w-5" />}
           variant="despesa"
         />
         <MetricCard
           label="Vendas do período"
-          value={vendas.length > 0 ? `${vendas.reduce((s, v) => s + Number(v.valor_total), 0).toFixed(2)}€` : "--"}
+          value={vendas.length > 0 ? `${vendas.reduce((s, v) => s + Number(v.valor_total), 0).toFixed(2)}Kz` : "--"}
           subtitle={`${vendas.length} vendas`}
           icon={<DollarSign className="h-5 w-5" />}
           variant="info"
         />
         <MetricCard
           label="Lucro líquido"
-          value={faturamento > 0 || despesas > 0 ? `${lucro.toFixed(2)}€` : "--"}
+          value={faturamento > 0 || despesas > 0 ? `${lucro.toFixed(2)}Kz` : "--"}
           subtitle="últimos 30 dias"
           icon={<Sparkles className="h-5 w-5" />}
           variant="destaque"

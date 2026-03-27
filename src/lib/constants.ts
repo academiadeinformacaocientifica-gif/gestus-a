@@ -96,8 +96,8 @@ export const DATE_FORMATS = {
 
 // Moeda
 export const CURRENCY = {
-  SYMBOL: "€",
-  CODE: "EUR",
+  SYMBOL: "Kz",
+  CODE: "AOA",
   LOCALE: "pt-AO",
 } as const;
 
